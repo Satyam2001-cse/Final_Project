@@ -1,0 +1,354 @@
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Breat Cancer prediction using ML</title>
+
+  <style>
+form {
+  margin: 100px;
+
+
+}
+  
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+    /* CSS code for button */
+   /* body {
+      background-image: url('static/images/world.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }*/
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+ border-radius: 25px;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+
+    transition: all 0.4s ease 0s;
+    }
+#rcorners {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+#rcorners1 {
+  border-radius:30%;
+  background-color:white;
+  padding: 20px; 
+  width: 40x;
+  height: 45px; 
+  border-style: solid;
+  border-color: #ff0000 #00ff00 #0000ff rgb(250,0,255);;
+text-color:green;
+  border-width: 5px;
+  border-style: solid;
+}
+::placeholder {
+  color: #FF7F50;
+  opacity: 1;
+ font-size: 20px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #FF7F50;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #FF7F50;
+}
+
+.button {
+  border-radius: 4px;
+    background-color: rgba(30, 255, 50, 0.5);;
+  border: 2px solid black ;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 10%;
+height:10%px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+border-color:#FEFF33;
+color: #FF7F50;
+
+}
+.success {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.button span {
+  cursor: ;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #95A5A6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh
+}
+
+h1{
+  color: green;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 7px;
+  cursor: pointer
+ font: 100 3em sans-serif;
+color:#D0D3D4 ;
+ text-decoration: underline overline dotted red;
+  text-decoration-color: grey
+}
+h1 span{
+  transition: .5s linear
+}
+h1:hover span:nth-child(1){
+  margin-right: 5px
+}
+h1:hover span:nth-child(1):after{
+  content: "'";
+}
+h1:hover span:nth-child(2){
+  margin-left: 30px
+}
+h1:hover span{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: green;
+    outline: green;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+   <video autoplay  loop id="myVideo">
+  <source src="static\mixkit-top-aerial-shot-of-seashore-with-rocks-1090.mp4" type="video/mp4"">
+  
+</video>
+ <div class="content">
+ 
+
+  
+
+
+
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+    <center>
+    <form action="{{ url_for('predict')}}" method="post">
+  
+        <h1><span>Enter the  Patient features</span></h1>
+
+
+
+      
+  <input type="text" name="mean_radius"  id="rcorners1" placeholder="mean radius" required="required"style="border:4px outset #626567;"/>
+
+
+ <input type="text" name="mean texture" id="rcorners1"placeholder="mean texture" required="required" style="border:4px outset #626567;"/>
+
+	
+      <input type="text" name="mean smoothness" id="rcorners1" placeholder="mean smoothness" required="required" style="border:4px outset #626567;"/>
+<br><br>
+	 <input type="text" name="mean compactness" id="rcorners1" placeholder="mean compactness" required="required" style="border:4px outset #626567;"/>
+
+    	
+       <input type="text" name="mean symmetry"  id="rcorners1" placeholder="mean symmetry" required="required"style="border:4px outset #626567;" />
+   	<input type="text" name="mean fractal dimension"id="rcorners1" placeholder="mean fractal dimension" required="required"style="border:4px outset #626567;" />
+ <br><br>
+      <input type="text" name="radius error"id="rcorners1" placeholder="radius error" required="required" style="border:4px outset #626567;"/>
+	<input type="text" name="texture error"id="rcorners1" placeholder="texture error" required="required" style="border:4px outset #626567;"/>
+	
+   	<input type="text" name="smoothness error"id="rcorners1" placeholder="smoothness error" required="required" style="border:4px outset #626567;"/>
+<br><br>
+    	<input type="text" name="compactness error"id="rcorners1" placeholder="compactness error" required="required" style="border:4px outset #626567;"/>
+
+        <input type="text" name="concave point error"id="rcorners1" placeholder="concave_errors" required="required" style="border:4px outset #626567;"/>
+<input type="text" name="symmetry error"id="rcorners1" placeholder="symmetry_error error" required="required" style="border:4px outset #626567;"/>
+<br>
+<br>
+
+<button type="submit" class="glow-on-hover" type="button"><span>Predict Cancer</span></button>
+ 
+  </div>  
+       <div>  
+    </form>
+          <div>
+       <center>
+   <h1><span>{{ prediction_text }}</span></h1>
+       </center>
+   </div>  
+   
+   <!-- Show predicted output using ML model --> 
+  
+
+ </div>
+
+</body>
+</html>
